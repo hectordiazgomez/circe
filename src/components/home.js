@@ -21,6 +21,12 @@ const Home = () => {
         }
     };
 
+    const skip = () => {
+        if (currentSentenceIndex < sentences.length - 1) {
+            setCurrentSentenceIndex(currentSentenceIndex + 1);
+        }
+    };
+
     const agregar = async () => {
         await addDoc(translationRef, {
             translationsAwajun: translationAwajun,
@@ -56,12 +62,18 @@ const Home = () => {
                     ></textarea>
                 </div>
             </div>
-            <div className="flex pb-36 justify-center">
+            <div className="flex pt-12 sm:px-72 pb-36 justify-evenly">
                 <button
                     className="mt-4 bg-blue-500 text-white py-2 px-4 rounded"
                     onClick={agregar}
                 >
                     Next
+                </button>
+                                <button
+                                onClick={skip}
+                    className="mt-4 bg-blue-500 text-white py-2 px-4 rounded"
+                >
+                    Skip
                 </button>
             </div>
         </>
