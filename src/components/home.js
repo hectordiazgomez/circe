@@ -69,7 +69,7 @@ const Home = () => {
             <div className="flex justify-center">
                 <div className="w-5/6 flex justify-center sm:w-3/4 ">
                     <textarea
-                        className="w-full mt-6 p-2 sm:w-1/2 rounded outline-none border-blue-500 border-2"
+                        className="w-full mt-6 p-2 sm:w-1/2 rounded outline-none border-green-500 border"
                         rows={6}
                         value={translationAwajun}
                         onChange={(e) => settranslationAwajun(e.target.value)}
@@ -78,14 +78,14 @@ const Home = () => {
             </div>
             <div className="flex pt-12 sm:px-72 pb-36 justify-evenly">
                 <button
-                    className="mt-4 bg-blue-500 text-white font-semibold py-2 px-5 rounded"
+                    className="mt-4 bg-green-500 text-white font-semibold py-2 px-5 rounded"
                     onClick={agregar}
                 >
                     Siguiente 
                 </button>
                                 <button
                                 onClick={skip}
-                    className="mt-4 bg-blue-500 text-white py-2 font-semibold px-5 rounded"
+                    className="mt-4 bg-green-500 text-white py-2 font-semibold px-5 rounded"
                 >
                     Saltar
                 </button>
@@ -104,11 +104,13 @@ const Home = () => {
             </div>
             <div className="flex justify-center">
                 <div className="w-5/6 pb-20 sm:w-3/4">
-                    <p className="pb-3">Resultados</p>
+                    <p className="pb-3 text-xl text-green-500 font-semibold">Resultados</p>
                     <div className="text-gray-700">
                         {searchTerm && filteredEntries.length > 0 ? (
                             filteredEntries.map(([key, value], index) => (
-                                <p className="py-3" key={index}>{`${key}: ${value}`}</p>
+                                <div className="py-6" key={index}>
+                                <p className="text-lg"><a className="text-green-500 mr-2 inline font-semibold">Awajun: </a> {`${key}`}</p>
+                                <p className="pt-3 text-lg sm:pt-2"><a className="text-blue-500 font-semibold inline mr-2">Español: </a>{`${value}`}</p></div>
                             ))
                         ) : null}
                     </div>
