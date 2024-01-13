@@ -3,6 +3,7 @@ import oraciones from "../data/sentences.json";
 import { getFirestore, collection, getDocs, addDoc, serverTimestamp } from 'firebase/firestore';
 import {db} from "../firebase"
 import database from "./assets/searchover.json"
+import { Link } from "react-router-dom";
 
 const Home = () => {
 
@@ -58,12 +59,19 @@ const Home = () => {
         <>
             <div className="flex justify-center">
                 <div className="w-5/6  sm:w-3/4 pt-12">
-                    <p className="text-xl text-gray-700 font-semibold pb-12">
+                    <p className="text-xl text-gray-700 font-semibold">
                         Agradecemos tu colaboración con el proyecto Yumi.
                     </p>
                 </div>
             </div>
-            <div className="flex text-xl font-medium pt-12 text-gray-700 justify-center">
+            <div className="flex justify-center">
+                <div className="w-5/6  sm:w-3/4 pt-4">
+                    <Link to="/policy" className="text-sm text-gray-500 underline hover font-semibold">
+                    Al acceder y usar este sitio web usted acepta nuestra política de privacidad.
+                    </Link>
+                </div>
+            </div>
+            <div className="flex text-xl font-medium pt-20 text-gray-700 justify-center">
                 <p>{sentences[currentSentenceIndex]}</p>
             </div>
             <div className="flex justify-center">
