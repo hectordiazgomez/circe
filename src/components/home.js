@@ -72,7 +72,7 @@ const Home = () => {
                 </div>
             </div>
             <div className="flex text-xl font-medium pt-20 text-gray-700 justify-center">
-                <p>{sentences[currentSentenceIndex]}</p>
+                <p className="text-center">{sentences[currentSentenceIndex]}</p>
             </div>
             <div className="flex justify-center">
                 <div className="w-5/6 flex justify-center sm:w-3/4 ">
@@ -87,15 +87,15 @@ const Home = () => {
             <div className="flex pt-12 sm:px-72 pb-36 justify-evenly">
                 <button
                     className="mt-4 bg-green-500 text-white font-semibold py-2 px-5 rounded"
-                    onClick={agregar}
+                    onClick={skip}
                 >
-                    Siguiente 
+                    Saltar 
                 </button>
                                 <button
-                                onClick={skip}
+                                onClick={agregar}
                     className="mt-4 bg-green-500 text-white py-2 font-semibold px-5 rounded"
                 >
-                    Saltar
+                    Siguiente
                 </button>
             </div>
             <div className="flex justify-center">
